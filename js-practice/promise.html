@@ -1,0 +1,36 @@
+<script>
+
+	var promise1 = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    resolve('foo');
+  }, 300);
+});
+
+promise1.then(function(value) {
+  console.log(value);
+  // expected output: "foo"
+});
+
+console.log(promise1);
+
+
+function makeSeverCall(url,data,header,flg){
+	console.log(url);
+	console.log(data);
+	console.log(header);
+    //ajax to server
+    return new Promise(function(resolve,reject){
+     if(flg=='Y'){
+     	 setTimeout(function() {
+    resolve('success');
+  }, 300);
+     }else{
+     	 setTimeout(function() {
+    reject('error');
+  }, 300);
+     }
+    });
+}
+
+makeSeverCall("a","b","c","N").then(val=>console.log(val)).catch(val=>console.log('error:' +val));
+</script>
