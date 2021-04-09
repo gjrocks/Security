@@ -1,0 +1,7 @@
+{
+    "plugins": [
+        "transform-regenerator",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-syntax-json-strings"
+    ]
+  }
